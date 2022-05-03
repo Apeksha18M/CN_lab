@@ -78,7 +78,8 @@ void checksum_hex()
     {
         sum= sum + msg[i];
     }
-    if (sum & 0xFFFF0000 != 0)
+ 
+    if ((sum & 0xFFFF0000) != 0)
     {
         printf("meow");
         carsum = (sum & 0x0000FFFF) + ((sum & 0xFFFF0000)>>16);
@@ -91,6 +92,8 @@ void checksum_hex()
     printf(" Sum is %x\nSum after Carry %x\n Checksum is %x",sum,carsum, (checksum & 0xFFFF));
     
 }
+
+
 
 
 void main()
