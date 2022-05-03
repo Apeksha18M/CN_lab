@@ -45,6 +45,25 @@ void bitstuffing()
     printf(" \n After bitstuffing: %s",bitstuff);
 }
 
+void checksum_func()
+    {
+    int msg[30],size, checksum, sum = 0;
+    printf(" Enter the array size: ");
+    scanf("%d",&size);
+    printf("Enter array: ");
+    for(int i=0; i<size ;i++)
+    {
+        scanf("%d",&msg[i]);
+    }
+    for(int i=0; i<size ;i++)
+    {
+        sum= sum + msg[i];
+    }
+    checksum = ~sum;
+    printf(" Sum is %d\n Checksum is %d",sum, checksum);
+    
+}
+
 void main()
 {
 }
