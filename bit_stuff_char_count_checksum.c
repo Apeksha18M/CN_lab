@@ -64,6 +64,35 @@ void checksum_func()
     
 }
 
+void checksum_hex()
+{
+    int msg[30],size, checksum, sum = 0, carsum = 0;
+    printf(" Enter the array size: ");
+    scanf("%d",&size);
+    printf("Enter array: ");
+    for(int i=0; i<size ;i++)
+    {
+        scanf("%x",&msg[i]);
+    }
+    for(int i=0; i<size ;i++)
+    {
+        sum= sum + msg[i];
+    }
+    if (sum & 0xFFFF0000 != 0)
+    {
+        printf("meow");
+        carsum = (sum & 0x0000FFFF) + ((sum & 0xFFFF0000)>>16);
+    }
+    else
+    {
+        carsum = sum;
+    }
+    checksum = ~carsum;
+    printf(" Sum is %x\nSum after Carry %x\n Checksum is %x",sum,carsum, (checksum & 0xFFFF));
+    
+}
+
+
 void main()
 {
 }
