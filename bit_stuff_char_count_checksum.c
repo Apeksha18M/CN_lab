@@ -7,7 +7,15 @@ Code for Bit Stuffing on the Sender side.
 #include <stdio.h>
 #include <string.h>
 
-int main()
+void character_count()
+{
+    char char_count[15];
+    printf("Enter the string: ");
+    scanf("%s",char_count);
+    printf("\n After character-count: %lu%s",(strlen(char_count))+1,char_count);
+}
+
+void bitstuffing()
 {
     char bitstuff[30];
     int count = 0, inp_len;
@@ -35,5 +43,9 @@ int main()
            }
     }
     printf(" \n After bitstuffing: %s",bitstuff);
+}
+
+void main()
+{
 }
 
